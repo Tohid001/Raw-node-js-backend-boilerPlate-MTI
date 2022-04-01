@@ -1,0 +1,20 @@
+{
+  "name": "raw-node-js-backend-boiler-plate",
+  "version": "1.0.0",
+  "description": "This is a backen boilerplate for building rest api using raw node js features",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Tohid001/Raw-node-js-backend-boilerPlate-MTI.git"
+  },
+  "author": "Mohammad Tohidul Islam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tohid001/Raw-node-js-backend-boilerPlate-MTI/issues"
+  },
+  "homepage": "https://github.com/Tohid001/Raw-node-js-backend-boilerPlate-MTI#readme"
+}
