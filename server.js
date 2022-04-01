@@ -1,32 +1,28 @@
+const fs = require("fs");
+const zlib = require("zlib");
+
 /*
- * Title: Nodes JS backend boilerPlate
- * Description: A boilerPlate for building RESTFul API using raw Node JS
- * Author: Mohammad Tohidul Islam
- * Date: 03/01/2022
- *
+ * buffer reading & writting in traditional way
  */
-// dependencies
-const http = require("http");
-const { handleReqRes } = require("./helpers/handleReqRes");
 
-// app object - module scaffolding
-const app = {};
+// const readStream = fs.createReadStream("./text.txt", "utf-8");
+// const writeStream = fs.createWriteStream("./output.txt", "utf-8");
 
-// configuration
-app.config = {
-  port: 3000,
-};
+// readStream.on("data", (chunk) => {
+//   writeStream.write(chunk);
+// });
 
-// create server
-app.createServer = () => {
-  const server = http.createServer(app.handleReqRes);
-  server.listen(app.config.port, () => {
-    console.log(`listening to port ${app.config.port}`);
-  });
-};
+// readStream.on("end", () => {
+//   console.log("reading ended");
+// });
 
-// handle Request Response
-app.handleReqRes = handleReqRes;
+/*
+ * buffer reading & writting in using pipe
+ */
 
-// start the server
-app.createServer();
+const readStream = fs.createReadStream("./text.txt", "utf-8");
+const writeStream = fs.createWriteStream("./output.txt", "utf-8");
+
+readStream.pipe(writeStream);
+
+// readStream.pipe(zlib.createGzip()).pipe(fs.createWriteStream("input.text.gz"));/* creating zip file */
